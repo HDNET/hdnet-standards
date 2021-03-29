@@ -1,0 +1,4 @@
+name: hdnet-standards
+recipe: lamp
+config:
+  webroot: .
