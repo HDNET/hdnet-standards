@@ -1,0 +1,61 @@
+{
+  "commit-msg": {
+    "enabled": true,
+    "actions": [
+      {
+        "action": "\\CaptainHook\\App\\Hook\\Message\\Action\\Rules",
+        "options": [
+          "\\CaptainHook\\App\\Hook\\Message\\Rule\\CapitalizeSubject",
+          "\\CaptainHook\\App\\Hook\\Message\\Rule\\MsgNotEmpty",
+          "\\CaptainHook\\App\\Hook\\Message\\Rule\\NoPeriodOnSubjectEnd",
+          "\\CaptainHook\\App\\Hook\\Message\\Rule\\UseImperativeMood"
+        ]
+      },
+      {
+        "action": "\\CaptainHook\\App\\Hook\\Message\\Action\\Regex",
+        "options": {
+          "regex": "/XXX-[0-9]+ .*/"
+        }
+      }
+    ]
+  },
+  "pre-push": {
+    "enabled": false,
+    "actions": []
+  },
+  "pre-commit": {
+    "enabled": false,
+    "actions": []
+  },
+  "prepare-commit-msg": {
+    "enabled": false,
+    "actions": []
+  },
+  "post-commit": {
+    "enabled": false,
+    "actions": []
+  },
+  "post-merge": {
+    "enabled": false,
+    "actions": []
+  },
+  "post-checkout": {
+    "enabled": true,
+    "actions": [
+      {
+        "action": "lando composer install",
+        "options": {},
+        "conditions": [
+          {
+            "exec": "\\CaptainHook\\App\\Hook\\Condition\\FileChanged\\Any",
+            "args": [
+              [
+                "composer.lock"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
