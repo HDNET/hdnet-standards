@@ -2,3 +2,7 @@ name: hdnet-standards
 recipe: lamp
 config:
   webroot: .
+tooling:
+  captianhook:
+    service: appserver
+    cmd: vendor/bin/captianhook
