@@ -1,5 +1,8 @@
 {
     "require-dev": {
         "captainhook/captainhook": "^5.5"
+    },
+    "require": {
+        "friendsofphp/php-cs-fixer": "^2.18"
     }
 }

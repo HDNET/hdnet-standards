@@ -43,18 +43,7 @@
         "enabled": false,
         "actions": [
             {
-                "action": "lando composer install",
-                "options": {},
-                "conditions": [
-                    {
-                        "exec": "\\CaptainHook\\App\\Hook\\Condition\\FileChanged\\Any",
-                        "args": [
-                            [
-                                "composer.lock"
-                            ]
-                        ]
-                    }
-                ]
+                "action": "lando stop"
             }
         ]
     }
