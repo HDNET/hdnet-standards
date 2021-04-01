@@ -25,7 +25,11 @@
     },
     "pre-commit": {
         "enabled": false,
-        "actions": []
+        "actions": [
+            {
+                "action": "/vendor/bin/php-cs-fixer fix src"
+            }
+        ]
     },
     "prepare-commit-msg": {
         "enabled": false,
@@ -41,10 +45,6 @@
     },
     "post-checkout": {
         "enabled": false,
-        "actions": [
-            {
-                "action": "lando stop"
-            }
-        ]
+        "actions": []
     }
 }
