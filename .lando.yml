@@ -1,8 +1,19 @@
 name: hdnet-standards
-recipe: lamp
-config:
-  webroot: .
+services:
+  appserver:
+    type: php:7.4
+    via: nginx
+    ssl: true
+    webroot: .
+    composer_version: '2.0.7'
+
 tooling:
-  captianhook:
+  captainhook:
     service: appserver
-    cmd: vendor/bin/captianhook
+    cmd: vendor/bin/captainhook
+  composer:
+    service: appserver
+    cmd: composer
+  phpunit:
+    service: appserver
+    cmd: phpunit --configuration=phpunit.xml

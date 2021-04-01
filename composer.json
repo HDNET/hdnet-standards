@@ -1,8 +1,30 @@
 {
-    "require-dev": {
-        "captainhook/captainhook": "^5.5"
+    "name": "hdnet/hdnet-standards",
+    "description": "HDNET coding standards via githook mechanism",
+
+    "autoload": {
+        "psr-4": {
+            "HDNET\\Standards\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HDNET\\Standards\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.4.9"
+        }
     },
     "require": {
-        "friendsofphp/php-cs-fixer": "^2.18"
+        "php": "^7.4||^8.0",
+        "captainhook/captainhook": "^5.5",
+        "friendsofphp/php-cs-fixer": "^2.18",
+        "seld/jsonlint": "^1.8"
+    },
+    "require-dev": {
+        "twig/twig": "^3.3",
+        "phpunit/phpunit": "^9.5"
     }
 }

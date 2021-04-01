@@ -24,10 +24,13 @@
         "actions": []
     },
     "pre-commit": {
-        "enabled": false,
+        "enabled": true,
         "actions": [
             {
-                "action": "/vendor/bin/php-cs-fixer fix src"
+                "action": "\\HDNET\\Standards\\Hook\\JsonHook",
+                "options": {
+                    "folders": "config/**.json"
+                }
             }
         ]
     },
