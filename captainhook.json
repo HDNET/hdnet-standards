@@ -1,6 +1,6 @@
 {
     "commit-msg": {
-        "enabled": false,
+        "enabled": true,
         "actions": [
             {
                 "action": "\\CaptainHook\\App\\Hook\\Message\\Action\\Rules",
@@ -12,10 +12,7 @@
                 ]
             },
             {
-                "action": "\\CaptainHook\\App\\Hook\\Message\\Action\\Regex",
-                "options": {
-                    "regex": "/XXX-[0-9]+ .*/"
-                }
+                "action": "\\HDNET\\Standards\\Hook\\Message\\JiraIssue"
             }
         ]
     },
