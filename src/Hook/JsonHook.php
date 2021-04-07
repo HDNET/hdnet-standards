@@ -34,7 +34,7 @@ class JsonHook implements Action
     {
         // @todo based con configuration (Staged, finder... folder based, whitelist, blacklist etc.)
         return [
-            '/app/tests/data/json/valid.json'
+            __DIR__ . '/../../tests/data/json/valid.json'
         ];
     }
 }
