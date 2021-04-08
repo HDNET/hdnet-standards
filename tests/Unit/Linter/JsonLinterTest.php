@@ -14,12 +14,10 @@ class JsonLinterTest extends TestCase
         $this->assertTrue($linter->lint($fileName));
     }
 
-    /*
     public function testInvalidJson(): void
     {
         $linter = new JsonLinter();
         $fileName = dirname(__DIR__, 2) . '/data/json/invalid.json';
         $this->assertNotTrue($linter->lint($fileName));
     }
-    */
 }
