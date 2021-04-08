@@ -30,7 +30,7 @@ class YamlHook implements Action
         if (sizeof($files) > 1)
             $io->write(sizeof($files) . ' YAML files are good!');
         else {
-            $io->write('The' . sizeof($files) . ' YAML file is good!');
+            $io->write('The ' . sizeof($files) . ' YAML file is good!');
         }
     }
 
