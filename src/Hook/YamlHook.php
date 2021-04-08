@@ -34,7 +34,7 @@ class YamlHook implements Action
     {
         // @todo based con configuration (Staged, finder... folder based, whitelist, blacklist etc.)
         return [
-            __DIR__ . '/../../tests/data/yaml/invalid.yaml'
+            __DIR__ . '/../../tests/data/yaml/valid.yaml'
         ];
     }
 }
