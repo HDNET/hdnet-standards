@@ -1,6 +1,6 @@
 {
     "commit-msg": {
-        "enabled": true,
+        "enabled": false,
         "actions": [
             {
                 "action": "\\HDNET\\Standards\\Hook\\Message\\ChrisBeams"
@@ -25,6 +25,9 @@
             },
             {
                 "action": "\\HDNET\\Standards\\Hook\\YamlHook"
+            },
+            {
+                "action": "vendor/bin/xmllint tests/data/xml/valid.xml"
             }
         ]
     },

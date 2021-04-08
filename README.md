@@ -11,19 +11,3 @@ Forces HDNET's coding standards on commits
 # Tooling
 
 * `lando phpunit` => Execute unit tests
-
-
-
-
-# Todo Check
-
-CaptainHook\App\Hook\Message\Action\Beams
-
-
-
-"files": "{$STAGED_FILES|of-type:php}"
-
-
-            {
-                "action": "/vendor/bin/php-cs-fixer fix src"
-            },
