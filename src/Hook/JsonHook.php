@@ -27,7 +27,11 @@ class JsonHook implements Action
             }
         }
 
-        $io->write(sizeof($files) . ' JSON files are good!');
+        if (sizeof($files) > 1)
+            $io->write(sizeof($files) . ' JSON files are good!');
+        else {
+            $io->write('The' . sizeof($files) . ' JSON file is good!');
+        }
     }
 
     protected function getFiles(): array
