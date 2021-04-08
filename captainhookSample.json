@@ -3,19 +3,10 @@
     "enabled": true,
     "actions": [
       {
-        "action": "\\CaptainHook\\App\\Hook\\Message\\Action\\Rules",
-        "options": [
-          "\\CaptainHook\\App\\Hook\\Message\\Rule\\CapitalizeSubject",
-          "\\CaptainHook\\App\\Hook\\Message\\Rule\\MsgNotEmpty",
-          "\\CaptainHook\\App\\Hook\\Message\\Rule\\NoPeriodOnSubjectEnd",
-          "\\CaptainHook\\App\\Hook\\Message\\Rule\\UseImperativeMood"
-        ]
+        "action": "\\HDNET\\Standards\\Hook\\Message\\ChrisBeams"
       },
       {
-        "action": "\\CaptainHook\\App\\Hook\\Message\\Action\\Regex",
-        "options": {
-          "regex": "/XXX-[0-9]+ .*/"
-        }
+        "action": "\\HDNET\\Standards\\Hook\\Message\\JiraIssue"
       }
     ]
   },
@@ -24,8 +15,18 @@
     "actions": []
   },
   "pre-commit": {
-    "enabled": false,
-    "actions": []
+    "enabled": true,
+    "actions": [
+      {
+        "action": "\\HDNET\\Standards\\Hook\\JsonHook",
+        "options": {
+          "folders": "config/**.json"
+        }
+      },
+      {
+        "action": "\\HDNET\\Standards\\Hook\\YamlHook"
+      }
+    ]
   },
   "prepare-commit-msg": {
     "enabled": false,
@@ -40,22 +41,7 @@
     "actions": []
   },
   "post-checkout": {
-    "enabled": true,
-    "actions": [
-      {
-        "action": "lando composer install",
-        "options": {},
-        "conditions": [
-          {
-            "exec": "\\CaptainHook\\App\\Hook\\Condition\\FileChanged\\Any",
-            "args": [
-              [
-                "composer.lock"
-              ]
-            ]
-          }
-        ]
-      }
-    ]
+    "enabled": false,
+    "actions": []
   }
 }

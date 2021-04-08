@@ -1,6 +1,6 @@
 {
     "commit-msg": {
-        "enabled": false,
+        "enabled": true,
         "actions": [
             {
                 "action": "\\HDNET\\Standards\\Hook\\Message\\ChrisBeams"
