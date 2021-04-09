@@ -5,7 +5,6 @@
 
 namespace HDNET\Standards\Hook;
 
-
 use CaptainHook\App\Config;
 use CaptainHook\App\Console\IO;
 use CaptainHook\App\Exception\ActionFailed;
@@ -15,10 +14,8 @@ use SebastianFeldmann\Git\Repository;
 
 class YamlHook implements Action
 {
-
     public function execute(Config $config, IO $io, Repository $repository, Config\Action $action): void
     {
-
         $linter = new YamlLinter();
         $files = $this->getFiles();
         foreach ($files as $file) {
@@ -27,9 +24,9 @@ class YamlHook implements Action
             }
         }
 
-        if (sizeof($files) > 1)
+        if (sizeof($files) > 1) {
             $io->write(sizeof($files) . ' YAML files are good!');
-        else {
+        } else {
             $io->write('The ' . sizeof($files) . ' YAML file is good!');
         }
     }

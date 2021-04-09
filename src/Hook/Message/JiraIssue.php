@@ -5,7 +5,6 @@
 
 namespace HDNET\Standards\Hook\Message;
 
-
 use CaptainHook\App\Config\Options;
 use CaptainHook\App\Exception\ActionFailed;
 
