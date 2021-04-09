@@ -15,7 +15,7 @@
         "actions": []
     },
     "pre-commit": {
-        "enabled": false,
+        "enabled": true,
         "actions": [
             {
                 "action": "\\HDNET\\Standards\\Hook\\JsonHook",
@@ -27,7 +27,7 @@
                 "action": "\\HDNET\\Standards\\Hook\\YamlHook"
             },
             {
-                "action": "vendor/bin/xmllint tests/data/xml"
+                "action": "vendor/bin/php-cs-fixer fix src"
             }
         ]
     },
