@@ -1,4 +1,7 @@
 {
+    "config": {
+        "verbosity": "debug"
+    },
     "commit-msg": {
         "enabled": false,
         "actions": [
@@ -24,7 +27,10 @@
                 "action": "vendor/bin/xmllint tests/data/xml"
             },
             {
-                "action": "\\HDNET\\Standards\\Hook\\JsonHook"
+                "action": "\\HDNET\\Standards\\Hook\\JsonHook",
+                "options": {
+                    "directory" : "/../../tests/data/json/"
+                }
             },
             {
                 "action": "\\HDNET\\Standards\\Hook\\YamlHook"

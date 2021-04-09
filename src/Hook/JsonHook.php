@@ -17,7 +17,8 @@ class JsonHook implements Action
     public function execute(Config $config, IO $io, Repository $repository, Config\Action $action): void
     {
         $linter = new JsonLinter();
-        $files = $this->getFiles();
+        $options = $action->getOptions();
+        $files = $this->getFiles($options->get('directory'));
         foreach ($files as $file) {
             if (!$linter->lint($file)) {
                 throw new ActionFailed('JSON invalid at: ' . $file);
@@ -37,9 +38,13 @@ class JsonHook implements Action
         $files = [
             __DIR__ . '/../../tests/data/json/valid.json'
         ];
-        if ($directory) {
-            $files = $directory;
+        if ($directory && is_dir($directory)) {
+            $fileNames = scandir($directory);
+            $files = array_map(function (string $file) use ($directory) {
+                return __DIR__ . $directory . $file;
+            }, $fileNames);
         }
+
         return $files;
     }
 }
