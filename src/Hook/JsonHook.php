@@ -31,11 +31,15 @@ class JsonHook implements Action
         }
     }
 
-    protected function getFiles(): array
+    protected function getFiles(?string $directory = null): array
     {
         // @todo based on configuration (Staged, finder... folder based, whitelist, blacklist etc.)
-        return [
+        $files = [
             __DIR__ . '/../../tests/data/json/valid.json'
         ];
+        if ($directory) {
+            $files = $directory;
+        }
+        return $files;
     }
 }
