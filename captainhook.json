@@ -21,13 +21,13 @@
                 "action": "vendor/bin/php-cs-fixer fix src"
             },
             {
+                "action": "vendor/bin/xmllint tests/data/xml"
+            },
+            {
                 "action": "\\HDNET\\Standards\\Hook\\JsonHook"
             },
             {
                 "action": "\\HDNET\\Standards\\Hook\\YamlHook"
-            },
-            {
-                "action": "vendor/bin/xmllint tests/data/xml"
             }
         ]
     },
