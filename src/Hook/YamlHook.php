@@ -33,7 +33,7 @@ class YamlHook implements Action
 
     protected function getFiles(): array
     {
-        // @todo based con configuration (Staged, finder... folder based, whitelist, blacklist etc.)
+        // @todo based on configuration (Staged, finder... folder based, whitelist, blacklist etc.)
         return [
             __DIR__ . '/../../tests/data/yaml/valid.yaml'
         ];
