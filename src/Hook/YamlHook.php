@@ -31,11 +31,19 @@ class YamlHook implements Action
         }
     }
 
-    protected function getFiles(): array
+    protected function getFiles(?string $directory = null): array
     {
-        // @todo based on configuration (Staged, finder... folder based, whitelist, blacklist etc.)
-        return [
-            __DIR__ . '/../../tests/data/yaml/valid.yaml'
-        ];
+        $files = [];
+        if ($directory && is_dir($directory)) {
+            $fileNames = scandir($directory);
+            foreach ($fileNames as $fileName) {
+                $fullFileName = $directory . $fileName;
+                if (is_file($fullFileName)) {
+                    $files[] = $fullFileName;
+                }
+            }
+        }
+
+        return $files;
     }
 }

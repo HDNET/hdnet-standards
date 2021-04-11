@@ -12,6 +12,9 @@ Forces HDNET's coding standards on commits
 - Change the Project's Jiraticket
     - src/Hook/Message/JiraIssue.php
         - `return '/XXX-[0-9]+ .*/';`
+- Change path to src-directory
+    - captainhook.json
+        - `"action": "vendor/bin/php-cs-fixer fix src"`
 - Change path to xml-files
     - captainhook.json
         - `"action": "vendor/bin/xmllint tests/data/xml"`

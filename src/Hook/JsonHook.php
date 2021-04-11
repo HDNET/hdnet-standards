@@ -18,7 +18,8 @@ class JsonHook implements Action
     {
         $linter = new JsonLinter();
         $options = $action->getOptions();
-        $files = $this->getFiles($options->get('directory'));
+        $directory = __DIR__ . $options->get('directory');
+        $files = $this->getFiles($directory);
         foreach ($files as $file) {
             if (!$linter->lint($file)) {
                 throw new ActionFailed('JSON invalid at: ' . $file);
@@ -34,15 +35,15 @@ class JsonHook implements Action
 
     protected function getFiles(?string $directory = null): array
     {
-        // @todo based on configuration (Staged, finder... folder based, whitelist, blacklist etc.)
-        $files = [
-            __DIR__ . '/../../tests/data/json/valid.json'
-        ];
+        $files = [];
         if ($directory && is_dir($directory)) {
             $fileNames = scandir($directory);
-            $files = array_map(function (string $file) use ($directory) {
-                return __DIR__ . $directory . $file;
-            }, $fileNames);
+            foreach ($fileNames as $fileName) {
+                $fullFileName = $directory . $fileName;
+                if (is_file($fullFileName)) {
+                    $files[] = $fullFileName;
+                }
+            }
         }
 
         return $files;

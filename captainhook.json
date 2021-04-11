@@ -33,7 +33,10 @@
                 }
             },
             {
-                "action": "\\HDNET\\Standards\\Hook\\YamlHook"
+                "action": "\\HDNET\\Standards\\Hook\\YamlHook",
+                "options": {
+                    "directory" : "/../../tests/data/yaml/"
+                }
             }
         ]
     },
