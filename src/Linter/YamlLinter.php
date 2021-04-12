@@ -8,7 +8,16 @@ class YamlLinter implements LinterInterface
 {
     public function lint(string $filename): bool
     {
-        $yamlParser = new Parser();
-        return null !== $yamlParser->parse(file_get_contents($filename));
+        try {
+            $yamlParser = new Parser();
+            return null !== $yamlParser->parse(file_get_contents($filename));
+        }catch (\Exception $exception) {
+            return false;
+        }
+    }
+
+    public function getFileExtension(): string
+    {
+        return 'yaml';
     }
 }

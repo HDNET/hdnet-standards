@@ -21,3 +21,11 @@ Forces HDNET's coding standards on commits
 
 # Tooling
 * `lando phpunit` => Execute unit tests
+
+
+
+# Todo
+
+-> Lokale captainhook.json für dein Projekt anpassen
+-> in captainhookSample.json dort "beispielhafte Vollkonfiguration"
+-> folders vs. directory (Konfiguration prüfen)

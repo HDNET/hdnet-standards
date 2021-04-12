@@ -11,4 +11,9 @@ class JsonLinter implements LinterInterface
         $jsonParser = new JsonParser();
         return null === $jsonParser->lint(file_get_contents($filename));
     }
+
+    public function getFileExtension(): string
+    {
+       return 'json';
+    }
 }

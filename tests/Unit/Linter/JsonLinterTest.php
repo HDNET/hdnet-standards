@@ -7,6 +7,12 @@ use PHPUnit\Framework\TestCase;
 
 class JsonLinterTest extends TestCase
 {
+
+    public function testValidFileExtension():void{
+        $linter = new JsonLinter();
+        $this->assertSame('json', $linter->getFileExtension());
+    }
+
     public function testValidJson(): void
     {
         $linter = new JsonLinter();
