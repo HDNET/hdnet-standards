@@ -11,8 +11,7 @@ use SebastianFeldmann\Git\Repository;
 
 abstract class AbstractFileBasedAction implements Action
 {
-
-    protected abstract function getLinter(): LinterInterface;
+    abstract protected function getLinter(): LinterInterface;
 
 
     public function execute(Config $config, IO $io, Repository $repository, Config\Action $action): void

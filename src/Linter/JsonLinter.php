@@ -14,6 +14,6 @@ class JsonLinter implements LinterInterface
 
     public function getFileExtension(): string
     {
-       return 'json';
+        return 'json';
     }
 }

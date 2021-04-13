@@ -11,7 +11,7 @@ class YamlLinter implements LinterInterface
         try {
             $yamlParser = new Parser();
             return null !== $yamlParser->parse(file_get_contents($filename));
-        }catch (\Exception $exception) {
+        } catch (\Exception $exception) {
             return false;
         }
     }

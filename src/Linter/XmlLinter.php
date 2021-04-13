@@ -28,7 +28,6 @@ class XmlLinter implements LinterInterface
             return false;
         }
         return $exitCode === 0;
-
     }
 
     public function getFileExtension(): string
