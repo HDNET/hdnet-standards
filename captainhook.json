@@ -27,7 +27,10 @@
                 "action": "vendor/bin/php-cs-fixer fix src"
             },
             {
-                "action": "\\HDNET\\Standards\\Hook\\XmlHook"
+                "action": "\\HDNET\\Standards\\Hook\\XmlHook",
+                "options": {
+                    "directory" : "/../../tests/data/xml/"
+                }
             },
             {
                 "action": "\\HDNET\\Standards\\Hook\\JsonHook",
