@@ -1,5 +1,9 @@
 <?php
 
+namespace HDNET\Standards\Hook\Message;
 
-# . ...
-# Beams
+use Ramsey\CaptainHook\ValidateConventionalCommit;
+
+class ConventionalCommits extends ValidateConventionalCommit
+{
+}

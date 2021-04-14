@@ -1,24 +1,26 @@
 <?php
-/**
- *
- */
 
 namespace HDNET\Standards\Hook\Message;
 
 use CaptainHook\App\Config\Options;
 use CaptainHook\App\Exception\ActionFailed;
+use CaptainHook\App\Hook\Message\Action\Regex;
 
-class JiraIssue extends \CaptainHook\App\Hook\Message\Action\Regex
+class JiraIssue extends Regex
 {
     /**
      * Extract regex from options array
      *
-     * @param \CaptainHook\App\Config\Options $options
+     * @param Options $options
      * @return string
-     * @throws \CaptainHook\App\Exception\ActionFailed
      */
     protected function getRegex(Options $options): string
     {
-        return '/XXX-[0-9]+ .*/';
+        if (empty($options->get('project'))) {
+            throw new ActionFailed('No project configuration');
+        }
+
+        // @todo option für Projekt Key! (siehe captainhook.json)
+        return '/' . $options->get('project') . '-[0-9]+ .*/';
     }
 }

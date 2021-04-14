@@ -9,12 +9,48 @@ Forces HDNET's coding standards on commits
 - Configure HDNET Standards to your project
 
 ## Configuration
-- Change the Project's Jiraticket
-    - src/Hook/Message/JiraIssue.php
-        - `return '/XXX-[0-9]+ .*/';`
+- Change the Jira-Project
+```
+"action": "\\HDNET\\Standards\\Hook\\Message\\JiraIssue",
+    "options": {
+    "project": "HDNET"
+}
+```
+
+- Change path to src-directory
+```
+"action": "vendor/bin/php-cs-fixer fix src"
+```
+  
 - Change path to xml-files
-    - captainhook.json
-        - `"action": "vendor/bin/xmllint tests/data/xml"`
+```
+"action": "\\HDNET\\Standards\\Hook\\XmlHook",
+"options": {
+    "directory" : "/../../tests/data/xml/"
+}
+```
+    
+Instead of validating the commit message with the rules of Chris Beams,
+you can use conventional commits with the following configuration in the captainhook.json:
+```
+{
+"action": "\\HDNET\\Standards\\Hook\\Message\\ConventionalCommits",
+    "options": {
+        "config": {
+        "typeCase": null,
+        "types": [],
+        "scopeCase": null,
+        "scopeRequired": false,
+        "scopes": [],
+        "descriptionCase": null,
+        "descriptionEndMark": null,
+        "bodyRequired": false,
+        "bodyWrapWidth": null,
+        "requiredFooters": []
+        }
+    }
+}
+```
 
 # Tooling
 * `lando phpunit` => Execute unit tests

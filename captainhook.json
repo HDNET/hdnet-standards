@@ -1,12 +1,18 @@
 {
+    "config": {
+        "verbosity": "debug"
+    },
     "commit-msg": {
-        "enabled": false,
+        "enabled": true,
         "actions": [
             {
                 "action": "\\HDNET\\Standards\\Hook\\Message\\ChrisBeams"
             },
             {
-                "action": "\\HDNET\\Standards\\Hook\\Message\\JiraIssue"
+                "action": "\\HDNET\\Standards\\Hook\\Message\\JiraIssue",
+                "options": {
+                    "project": "HDNET"
+                }
             }
         ]
     },
@@ -15,19 +21,28 @@
         "actions": []
     },
     "pre-commit": {
-        "enabled": true,
+        "enabled": false,
         "actions": [
             {
                 "action": "vendor/bin/php-cs-fixer fix src"
             },
             {
-                "action": "vendor/bin/xmllint tests/data/xml"
+                "action": "\\HDNET\\Standards\\Hook\\XmlHook",
+                "options": {
+                    "directory" : "/../../tests/data/xml/"
+                }
             },
             {
-                "action": "\\HDNET\\Standards\\Hook\\JsonHook"
+                "action": "\\HDNET\\Standards\\Hook\\JsonHook",
+                "options": {
+                    "directory" : "/../../tests/data/json/"
+                }
             },
             {
-                "action": "\\HDNET\\Standards\\Hook\\YamlHook"
+                "action": "\\HDNET\\Standards\\Hook\\YamlHook",
+                "options": {
+                    "directory" : "/../../tests/data/yaml/"
+                }
             }
         ]
     },

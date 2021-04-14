@@ -2,13 +2,13 @@
 
 namespace HDNET\Standards\Hook;
 
-use HDNET\Standards\Linter\JsonLinter;
 use HDNET\Standards\Linter\LinterInterface;
+use HDNET\Standards\Linter\XmlLinter;
 
-class JsonHook extends AbstractFileBasedAction
+class XmlHook extends AbstractFileBasedAction
 {
     protected function getLinter():LinterInterface
     {
-        return new JsonLinter();
+        return new XmlLinter();
     }
 }
