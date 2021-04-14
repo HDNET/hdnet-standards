@@ -3,7 +3,7 @@
         "verbosity": "debug"
     },
     "commit-msg": {
-        "enabled": false,
+        "enabled": true,
         "actions": [
             {
                 "action": "\\HDNET\\Standards\\Hook\\Message\\ChrisBeams"
@@ -21,7 +21,7 @@
         "actions": []
     },
     "pre-commit": {
-        "enabled": true,
+        "enabled": false,
         "actions": [
             {
                 "action": "vendor/bin/php-cs-fixer fix src"

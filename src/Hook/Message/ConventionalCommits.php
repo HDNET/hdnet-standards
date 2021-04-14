@@ -2,10 +2,8 @@
 
 namespace HDNET\Standards\Hook\Message;
 
-use CaptainHook\App\Hook\Message\Action\Beams;
+use Ramsey\CaptainHook\ValidateConventionalCommit;
 
-class ConventionalCommits extends Beams
+class ConventionalCommits extends ValidateConventionalCommit
 {
-
-    // @todo implement "like Beams"
 }
