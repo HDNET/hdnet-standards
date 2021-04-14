@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace HDNET\Standards\Hook;
 
@@ -26,10 +26,10 @@ abstract class AbstractFileBasedAction implements Action
             }
         }
 
-        if (sizeof($files) != 1) {
-            $io->write('The ' . sizeof($files) . ' ' . $linter->getFileExtension() . ' file is good!');
+        if (count($files) != 1) {
+            $io->write('The ' . count($files) . ' ' . $linter->getFileExtension() . ' file is good!');
         } else {
-            $io->write(sizeof($files) . ' ' . $linter->getFileExtension() . ' files are good!');
+            $io->write(count($files) . ' ' . $linter->getFileExtension() . ' files are good!');
         }
     }
 

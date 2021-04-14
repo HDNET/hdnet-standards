@@ -20,7 +20,6 @@
     "require": {
         "php": "^7.4||^8.0",
         "captainhook/captainhook": "^5.5",
-        "friendsofphp/php-cs-fixer": "^2.18",
         "seld/jsonlint": "^1.8",
         "symfony/yaml": "^5.2",
         "sclable/xml-lint": "^0.4.0",
@@ -28,6 +27,7 @@
     },
     "require-dev": {
         "twig/twig": "^3.3",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "friendsofphp/php-cs-fixer": "^2.18"
     }
 }

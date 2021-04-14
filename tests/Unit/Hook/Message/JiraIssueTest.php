@@ -1,10 +1,11 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace HDNET\Standards\Tests\Unit\Hook\Message;
 
 use CaptainHook\App\Config;
 use CaptainHook\App\Config\Action;
 use CaptainHook\App\Console\IO;
+use CaptainHook\App\Exception\ActionFailed;
 use HDNET\Standards\Hook\Message\JiraIssue;
 use PHPUnit\Framework\TestCase;
 use SebastianFeldmann\Git\CommitMessage;
@@ -17,32 +18,23 @@ class JiraIssueTest extends TestCase
      * @throws \Exception
      * @dataProvider getValidConfigurations
      */
-    public function testValidRegex(string $commitMessage, array $configuration)
+    public function testValidRegex(string $commitMessage, array $configuration): void
     {
-        $jiraIssueAction = new JiraIssue();
-
-        $configMock = $this->createMock(Config::class);
-        $ioMock = $this->createMock(IO::class);
-        $ioMock->expects($this->once())->method('write');
-
-        $repositoryMock = $this->createMock(Repository::class);
-        $repositoryMock->expects($this->once())
-            ->method('getCommitMsg')
-            ->willReturnCallback(function () use ($commitMessage) {
-                return new CommitMessage($commitMessage);
-            });
-
-        $action = new Action('', $configuration);
-        $jiraIssueAction->execute($configMock, $ioMock, $repositoryMock, $action);
-
-
-        $this->assertSame(true, true);
+        $this->expectNotToPerformAssertions();
+        $this->executeJiraIssueHook($commitMessage, $configuration);
     }
+
     /**
      * @throws \Exception
      * @dataProvider getInvalidConfigurations
      */
-    public function testInvalidRegex(string $commitMessage, array $configuration)
+    public function testInvalidRegex(string $commitMessage, array $configuration): void
+    {
+        $this->expectException(ActionFailed::class);
+        $this->executeJiraIssueHook($commitMessage, $configuration);
+    }
+
+    protected function executeJiraIssueHook(string $commitMessage, array $configuration): void
     {
         $jiraIssueAction = new JiraIssue();
 
@@ -51,20 +43,10 @@ class JiraIssueTest extends TestCase
 
         $repositoryMock = $this->createMock(Repository::class);
         $repositoryMock->method('getCommitMsg')
-            ->willReturnCallback(function () use ($commitMessage) {
-                return new CommitMessage($commitMessage);
-            });
-
-        try {
+            ->willReturnCallback(fn () => new CommitMessage($commitMessage));
 
         $action = new Action('', $configuration);
         $jiraIssueAction->execute($configMock, $ioMock, $repositoryMock, $action);
-        }catch(\CaptainHook\App\Exception\ActionFailed $exception) {
-            $this->assertSame(true, true);
-            return;
-        }
-
-        $this->assertSame(true, false);
     }
 
     public function getValidConfigurations(): array
@@ -88,5 +70,4 @@ class JiraIssueTest extends TestCase
             ['123 Hallo Welt', ['project' => 'HDNET']],
         ];
     }
-
 }

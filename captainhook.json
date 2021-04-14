@@ -24,7 +24,7 @@
         "enabled": true,
         "actions": [
             {
-                "action": "vendor/bin/php-cs-fixer fix src"
+                "action": "vendor/bin/php-cs-fixer fix"
             }
         ]
     },

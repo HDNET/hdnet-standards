@@ -5,7 +5,7 @@ Forces HDNET's coding standards on commits
 ## Usage
 - create a captainhook.json in the main project (Example: captainhookSample.json)
 - [Usually you would need to `vendor/bin/captainhook configure`, but creating the captainhook.json by hand does that for you]
-- Activate captainhook with `vendor/bin/captainhook install`
+- Activate captainhook with `vendor/bin/captainhook install --run-mode=lando`
 - Configure HDNET Standards to your project
 
 ## Configuration
