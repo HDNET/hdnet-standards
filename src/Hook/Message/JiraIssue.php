@@ -20,7 +20,6 @@ class JiraIssue extends Regex
             throw new ActionFailed('No project configuration');
         }
 
-        // @todo option für Projekt Key! (siehe captainhook.json)
         return '/' . $options->get('project') . '-[0-9]+ .*/';
     }
 }

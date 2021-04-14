@@ -18,8 +18,7 @@ abstract class AbstractFileBasedAction implements Action
     {
         $linter = $this->getLinter();
         $options = $action->getOptions();
-        // @todo fix "__DIR__"
-        $directory = __DIR__ . $options->get('directory');
+        $directory = dirname($config->getPath()) . '/' . ltrim($options->get('directory'), '/');
         $files = $this->getFiles($directory);
         foreach ($files as $file) {
             if (!$linter->lint($file)) {
@@ -27,10 +26,10 @@ abstract class AbstractFileBasedAction implements Action
             }
         }
 
-        if (sizeof($files) > 1) {
-            $io->write(sizeof($files) . ' ' . $linter->getFileExtension() . ' files are good!');
-        } else {
+        if (sizeof($files) != 1) {
             $io->write('The ' . sizeof($files) . ' ' . $linter->getFileExtension() . ' file is good!');
+        } else {
+            $io->write(sizeof($files) . ' ' . $linter->getFileExtension() . ' files are good!');
         }
     }
 
