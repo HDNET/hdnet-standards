@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace HDNET\Standards\Linter;
 
-use \Symfony\Component\Yaml\Parser;
+use Symfony\Component\Yaml\Parser;
 
 class YamlLinter implements LinterInterface
 {

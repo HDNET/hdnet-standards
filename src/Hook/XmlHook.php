@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace HDNET\Standards\Hook;
 
@@ -7,7 +9,7 @@ use HDNET\Standards\Linter\XmlLinter;
 
 class XmlHook extends AbstractFileBasedAction
 {
-    protected function getLinter():LinterInterface
+    protected function getLinter(): LinterInterface
     {
         return new XmlLinter();
     }

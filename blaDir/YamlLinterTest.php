@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace HDNET\Standards\Tests\Unit\Linter;
 
@@ -8,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class YamlLinterTest extends AbstractFileBasedActionTest
 {
-    public function testValidFileExtension():void
+    public function testValidFileExtension(): void
     {
         $linter = new YamlLinter();
         $this->assertSame('yaml', $linter->getFileExtension());

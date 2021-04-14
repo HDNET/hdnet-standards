@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace HDNET\Standards\Tests\Unit\Hook\Message;
 
@@ -13,7 +15,6 @@ use SebastianFeldmann\Git\Repository;
 
 class JiraIssueTest extends TestCase
 {
-
     /**
      * @throws \Exception
      * @dataProvider getValidConfigurations

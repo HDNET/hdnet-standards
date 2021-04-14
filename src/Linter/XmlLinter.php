@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace HDNET\Standards\Linter;
 
@@ -6,7 +8,7 @@ use sclable\xmlLint\console\application\Application;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\NullOutput;
-use \Symfony\Component\Yaml\Parser;
+use Symfony\Component\Yaml\Parser;
 
 class XmlLinter implements LinterInterface
 {

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace HDNET\Standards\Tests\Unit\Linter;
 
@@ -9,14 +11,14 @@ use HDNET\Standards\Linter\LinterInterface;
 
 class XmlLinterTest extends AbstractFileBasedActionTest
 {
-    public function getLinter():LinterInterface
+    public function getLinter(): LinterInterface
     {
         return new XmlLinter();
     }
 
     // @todo !!!!
 
-    public function testValidFileExtension():void
+    public function testValidFileExtension(): void
     {
         $linter = new XmlLinter();
         $this->assertSame('xml', $linter->getFileExtension());
@@ -28,7 +30,7 @@ class XmlLinterTest extends AbstractFileBasedActionTest
         $fileName = dirname(__DIR__, 2) . '/data/xml/valid.xml';
         $this->assertTrue($linter->lint($fileName));
     }
-    
+
     public function testInvalidXml(): void
     {
         $linter = new XmlLinter();
