@@ -2,6 +2,9 @@
 
 Forces HDNET's coding standards on commits
 
+## Installation
+- run ```composer require hdnet/hdnet-standards``` in your project
+
 ## Usage
 - copy the .php_cs into the root directory of your project and configure the finder if needed
 - create a captainhook.json in the root directory of your project (Example: captainhookSample.json)

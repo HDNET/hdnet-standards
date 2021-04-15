@@ -25,6 +25,12 @@
         "actions": [
             {
                 "action": "vendor/bin/php-cs-fixer fix"
+            },
+            {
+                "action": "\\CaptainHook\\App\\Hook\\PHP\\Action\\Linting"
+            },
+            {
+                "action": "\\CaptainHook\\App\\Hook\\Composer\\Action\\CheckLockFile"
             }
         ]
     },
