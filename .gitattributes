@@ -1,5 +1,5 @@
-/gitignore export-ignore
+.gitignore export-ignore
 /tests export-ignore
-/.lando.yml
-/captainhook.json
-/phpunit.xml
+.lando.yml export-ignore
+captainhook.json export-ignore
+phpunit.xml export-ignore

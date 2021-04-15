@@ -20,17 +20,26 @@ Forces HDNET's coding standards on commits
     "project": "HDNET"
 }
 ```
-
-- Change path to src-directory
-```
-"action": "vendor/bin/php-cs-fixer fix src"
-```
   
-- Change path to xml-files
+- Change path to json-, xml- and yaml-files
 ```
-"action": "\\HDNET\\Standards\\Hook\\XmlHook",
-"options": {
-    "directory" : "/../../tests/data/xml/"
+{
+    "action": "\\HDNET\\Standards\\Hook\\JsonHook",
+    "options": {
+        "directory" : "src/"
+    }
+},
+{
+    "action": "\\HDNET\\Standards\\Hook\\YamlHook",
+    "options": {
+        "directory" : "src/"
+    }
+},
+{
+    "action": "\\HDNET\\Standards\\Hook\\XmlHook",
+    "options": {
+        "directory" : "src/"
+    }
 }
 ```
     

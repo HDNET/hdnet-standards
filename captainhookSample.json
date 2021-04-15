@@ -24,13 +24,10 @@
     "enabled": true,
     "actions": [
       {
-        "action": "vendor/bin/php-cs-fixer fix src"
+        "action": "vendor/bin/php-cs-fixer fix"
       },
       {
-        "action": "\\HDNET\\Standards\\Hook\\XmlHook",
-        "options": {
-          "directory" : "src/"
-        }
+        "action": "\\CaptainHook\\App\\Hook\\PHP\\Action\\Linting"
       },
       {
         "action": "\\HDNET\\Standards\\Hook\\JsonHook",
@@ -43,6 +40,15 @@
         "options": {
           "directory" : "src/"
         }
+      },
+      {
+        "action": "\\HDNET\\Standards\\Hook\\XmlHook",
+        "options": {
+          "directory" : "src/"
+        }
+      },
+      {
+        "action": "\\CaptainHook\\App\\Hook\\Composer\\Action\\CheckLockFile"
       }
     ]
   },
