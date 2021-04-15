@@ -21,28 +21,16 @@
         "actions": []
     },
     "pre-commit": {
-        "enabled": false,
+        "enabled": true,
         "actions": [
             {
-                "action": "vendor/bin/php-cs-fixer fix src"
+                "action": "vendor/bin/php-cs-fixer fix"
             },
             {
-                "action": "\\HDNET\\Standards\\Hook\\XmlHook",
-                "options": {
-                    "directory" : "/../../tests/data/xml/"
-                }
+                "action": "\\CaptainHook\\App\\Hook\\PHP\\Action\\Linting"
             },
             {
-                "action": "\\HDNET\\Standards\\Hook\\JsonHook",
-                "options": {
-                    "directory" : "/../../tests/data/json/"
-                }
-            },
-            {
-                "action": "\\HDNET\\Standards\\Hook\\YamlHook",
-                "options": {
-                    "directory" : "/../../tests/data/yaml/"
-                }
+                "action": "\\CaptainHook\\App\\Hook\\Composer\\Action\\CheckLockFile"
             }
         ]
     },

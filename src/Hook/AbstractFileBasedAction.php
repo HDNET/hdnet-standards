@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace HDNET\Standards\Hook;
 
 use CaptainHook\App\Config;
@@ -18,8 +20,7 @@ abstract class AbstractFileBasedAction implements Action
     {
         $linter = $this->getLinter();
         $options = $action->getOptions();
-        // @todo fix "__DIR__"
-        $directory = __DIR__ . $options->get('directory');
+        $directory = dirname($config->getPath()) . '/' . ltrim($options->get('directory'), '/');
         $files = $this->getFiles($directory);
         foreach ($files as $file) {
             if (!$linter->lint($file)) {
@@ -27,10 +28,10 @@ abstract class AbstractFileBasedAction implements Action
             }
         }
 
-        if (sizeof($files) > 1) {
-            $io->write(sizeof($files) . ' ' . $linter->getFileExtension() . ' files are good!');
+        if (count($files) != 1) {
+            $io->write('The ' . count($files) . ' ' . $linter->getFileExtension() . ' file is good!');
         } else {
-            $io->write('The ' . sizeof($files) . ' ' . $linter->getFileExtension() . ' file is good!');
+            $io->write(count($files) . ' ' . $linter->getFileExtension() . ' files are good!');
         }
     }
 
