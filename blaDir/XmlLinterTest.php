@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace HDNET\Standards\Tests\Unit\Linter;
 
 use HDNET\Standards\Linter\JsonLinter;
+use HDNET\Standards\Linter\LinterInterface;
 use HDNET\Standards\Linter\XmlLinter;
 use PHPUnit\Framework\TestCase;
-use HDNET\Standards\Linter\LinterInterface;
 
 class XmlLinterTest extends AbstractFileBasedActionTest
 {

@@ -13,6 +13,11 @@ class PHPCSFixerConfigurationBuilder
         '@PSR12:risky' => true,
         '@PHP74Migration' => true,
         '@PHP74Migration:risky' => true,
+        'clean_namespace' => true,
+        'no_empty_comment' => true,
+        'no_empty_phpdoc' => true,
+        'no_empty_statement' => true,
+        'ordered_imports' => true,
         'strict_param' => true,
         'array_syntax' => ['syntax' => 'short'],
     ];
