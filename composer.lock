@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a14443a2721c31eab780523ad6ac48aa",
+    "content-hash": "bb0862e6329c58d8b6e3d4a85c2899f0",
     "packages": [
         {
             "name": "captainhook/captainhook",
-            "version": "5.5.1",
+            "version": "5.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/captainhookphp/captainhook.git",
-                "reference": "8ac90abf81288694568a7093a9b2267e5cda8904"
+                "reference": "a2100af1aeb23889130a0596eeb7f5014a3a00ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/captainhookphp/captainhook/zipball/8ac90abf81288694568a7093a9b2267e5cda8904",
-                "reference": "8ac90abf81288694568a7093a9b2267e5cda8904",
+                "url": "https://api.github.com/repos/captainhookphp/captainhook/zipball/a2100af1aeb23889130a0596eeb7f5014a3a00ab",
+                "reference": "a2100af1aeb23889130a0596eeb7f5014a3a00ab",
                 "shasum": ""
             },
             "require": {
@@ -78,7 +78,7 @@
             ],
             "support": {
                 "issues": "https://github.com/captainhookphp/captainhook/issues",
-                "source": "https://github.com/captainhookphp/captainhook/tree/5.5.1"
+                "source": "https://github.com/captainhookphp/captainhook/tree/5.6.0"
             },
             "funding": [
                 {
@@ -86,7 +86,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-27T20:32:35+00:00"
+            "time": "2021-04-15T10:55:45+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -619,16 +619,16 @@
         },
         {
             "name": "opis/json-schema",
-            "version": "1.0.19",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opis/json-schema.git",
-                "reference": "1bcb3582881d0692d002537a4472964280f71313"
+                "reference": "39d8072be8657a329a284339994401066406c43b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opis/json-schema/zipball/1bcb3582881d0692d002537a4472964280f71313",
-                "reference": "1bcb3582881d0692d002537a4472964280f71313",
+                "url": "https://api.github.com/repos/opis/json-schema/zipball/39d8072be8657a329a284339994401066406c43b",
+                "reference": "39d8072be8657a329a284339994401066406c43b",
                 "shasum": ""
             },
             "require": {
@@ -640,7 +640,7 @@
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "opis/string": "^1.4",
-                "phpunit/phpunit": "^6.5 || ^7.0"
+                "phpunit/phpunit": "^6.5 || ^7.0 || ^9.4"
             },
             "suggest": {
                 "opis/string": "A standalone library for manipulating multibyte strings"
@@ -680,9 +680,9 @@
             ],
             "support": {
                 "issues": "https://github.com/opis/json-schema/issues",
-                "source": "https://github.com/opis/json-schema/tree/master"
+                "source": "https://github.com/opis/json-schema/tree/1.1.0"
             },
-            "time": "2020-06-07T20:56:25+00:00"
+            "time": "2021-04-14T20:02:50+00:00"
         },
         {
             "name": "psr/container",
@@ -5086,82 +5086,6 @@
                 }
             ],
             "time": "2020-07-12T23:59:07+00:00"
-        },
-        {
-            "name": "twig/twig",
-            "version": "v3.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "1f3b7e2c06cc05d42936a8ad508ff1db7975cdc5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/1f3b7e2c06cc05d42936a8ad508ff1db7975cdc5",
-                "reference": "1f3b7e2c06cc05d42936a8ad508ff1db7975cdc5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/polyfill-ctype": "^1.8",
-                "symfony/polyfill-mbstring": "^1.3"
-            },
-            "require-dev": {
-                "psr/container": "^1.0",
-                "symfony/phpunit-bridge": "^4.4.9|^5.0.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Twig\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Twig Team",
-                    "role": "Contributors"
-                },
-                {
-                    "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
-                }
-            ],
-            "description": "Twig, the flexible, fast, and secure template language for PHP",
-            "homepage": "https://twig.symfony.com",
-            "keywords": [
-                "templating"
-            ],
-            "support": {
-                "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.3.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/twig/twig",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-02-08T09:54:36+00:00"
         },
         {
             "name": "webmozart/assert",
