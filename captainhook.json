@@ -25,6 +25,12 @@
         "actions": [
             {
                 "action": "vendor/bin/php-cs-fixer fix"
+            },
+            {
+                "action": "\\HDNET\\Standards\\Hook\\PHPHook",
+                "options": {
+                    "directory" : "tests/data/php"
+                }
             }
         ]
     },
