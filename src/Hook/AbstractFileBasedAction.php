@@ -41,7 +41,7 @@ abstract class AbstractFileBasedAction implements Action
         if ($directory && is_dir($directory)) {
             $fileNames = scandir($directory);
             foreach ($fileNames as $fileName) {
-                $fullFileName = $directory . $fileName;
+                $fullFileName = rtrim($directory, '/'). '/' . $fileName;
                 if (is_file($fullFileName)) {
                     $files[] = $fullFileName;
                 }
