@@ -44,7 +44,7 @@
             {
                 "action": "\\HDNET\\Standards\\Hook\\XmlHook",
                 "options": {
-                    "directory" : "src/"
+                    "directory" : "tests/data/xml"
                 }
             },
             {
