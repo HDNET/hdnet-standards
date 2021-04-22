@@ -24,14 +24,16 @@ abstract class AbstractFileBasedAction implements Action
         $files = $this->getFiles($directory);
         foreach ($files as $file) {
             if (!$linter->lint($file)) {
-                throw new ActionFailed($linter->getFileExtension() . '-files invalid at: ' . $file);
+                throw new ActionFailed('invalid ' . $linter->getFileExtension() . ' at: ' . $file);
             }
         }
 
-        if (count($files) != 1) {
-            $io->write('The ' . count($files) . ' ' . $linter->getFileExtension() . ' file is good!');
+        if (count($files) > 1) {
+            $io->write(count($files) . ' ' . $linter->getFileExtension() . '-files are good!');
+        } elseif (count($files) == 1) {
+            $io->write('The ' . count($files) . ' ' . $linter->getFileExtension() . '-file is good!');
         } else {
-            $io->write(count($files) . ' ' . $linter->getFileExtension() . ' files are good!');
+            $io->write(count($files) . ' ' . $linter->getFileExtension() . '-files found in this directory.');
         }
     }
 
@@ -41,7 +43,7 @@ abstract class AbstractFileBasedAction implements Action
         if ($directory && is_dir($directory)) {
             $fileNames = scandir($directory);
             foreach ($fileNames as $fileName) {
-                $fullFileName = rtrim($directory, '/'). '/' . $fileName;
+                $fullFileName = rtrim($directory, '/') . '/' . $fileName;
                 if (is_file($fullFileName)) {
                     $files[] = $fullFileName;
                 }
